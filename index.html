@@ -3,10 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Privacy & Search Engine Blocking Tags -->
-<meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="googlebot" content="noindex, nofollow, noarchive">
-<meta name="theme-color" content="#10152d">
+<meta name="theme-color" content="#e7eee2">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <title>Aashima & Anush | Enchanted English Garden</title>
 <style>
@@ -208,6 +205,242 @@ body:before{background:radial-gradient(ellipse at 50% 10%,rgba(61,43,20,.15),tra
 @media(max-width:480px){.hero h1.couple-full-names{font-size:clamp(2.2rem,10vw,3.5rem)}.hero h1.couple-full-names .name-line{font-size:.8em}}
 </style>
 
+
+<!-- Garden theme and final visual overrides loaded before first paint to prevent night-sky flash. -->
+<style id="frosted-glass-invitation-cards">
+/* Translucent frosted-glass finish for invitation cards */
+.paper, .event-card, .detail-card, #story .story {
+  background: linear-gradient(135deg, rgba(220, 230, 255, .065), rgba(190, 205, 238, .018) 55%, rgba(255, 220, 160, .03)) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(130%);
+  backdrop-filter: blur(7px) saturate(130%);
+  border: 1px solid rgba(231, 196, 119, .36) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), inset 0 0 28px rgba(220,166,75,.025), 0 18px 55px rgba(0,0,0,.18) !important;
+}
+.event-card, .detail-card { border-radius: 16px; }
+#story .story { border-radius: 18px; }
+@supports not ((backdrop-filter: blur(1px))) {
+  .paper, .event-card, .detail-card, #story .story { background: rgba(15, 24, 49, .78) !important; }
+}
+</style>
+<style id="more-transparent-overlay-card">
+#invitationGate {
+  /* Draw a subtle star field on the overlay itself, so it remains visible through the glass card. */
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,224,160,.95) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 82% 14%, rgba(255,224,160,.82) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 24% 32%, rgba(255,240,205,.8) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 91% 39%, rgba(255,224,160,.9) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 8% 57%, rgba(255,224,160,.8) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 76% 68%, rgba(255,240,205,.75) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 18% 82%, rgba(255,224,160,.85) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 88% 86%, rgba(255,224,160,.8) 0 1px, transparent 1.8px),
+    radial-gradient(ellipse at 50% 38%, rgba(21,31,59,.48) 0%, rgba(5,9,24,.60) 52%, rgba(2,4,12,.72) 100%) !important;
+}
+#invitationGate .gate-frame {
+  background: linear-gradient(155deg, rgba(24, 37, 72, .23), rgba(5, 10, 28, .19)) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(125%);
+  backdrop-filter: blur(5px) saturate(125%);
+  border-color: rgba(224, 183, 105, .52);
+  box-shadow: inset 0 0 40px rgba(220,166,75,.035), 0 25px 90px rgba(0,0,0,.28);
+}
+@supports not ((backdrop-filter: blur(1px))) {
+  #invitationGate .gate-frame { background: rgba(8, 15, 36, .32) !important; }
+}
+</style>
+<style id="enchanted-english-garden-theme">
+:root{--night:#edf2e7;--night2:#dce8d4;--gold:#a77a4b;--cream:#fffaf0;--rose:#d98fa2;--muted:#65775f}
+html{scroll-behavior:smooth}
+body{color:#4e604d;background:linear-gradient(180deg,#f8f4e9 0%,#e7efdf 43%,#f7e9e5 100%);font-family:'Cormorant Garamond',Georgia,serif}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.26;background:radial-gradient(ellipse at 4% 18%,rgba(106,143,91,.24),transparent 29%),radial-gradient(ellipse at 96% 24%,rgba(212,143,163,.2),transparent 26%),radial-gradient(ellipse at 12% 88%,rgba(212,143,163,.17),transparent 28%),radial-gradient(ellipse at 91% 82%,rgba(116,151,98,.2),transparent 27%)}
+.stars,.shooting-stars{display:none!important}
+nav{background:linear-gradient(rgba(248,244,233,.94),rgba(248,244,233,.64),transparent);backdrop-filter:blur(9px);color:#586b50;border-bottom:1px solid rgba(167,122,75,.18)}
+nav a:hover{color:#bd7189}
+.hero{background:radial-gradient(ellipse at 50% 40%,rgba(255,255,255,.58),transparent 58%)}
+.hero:before{background:radial-gradient(ellipse at 50% 50%,rgba(255,250,240,.52),transparent 72%)!important}
+.eyebrow{color:#a77a4b!important}.hero h1,.amp{color:#a77a4b!important}.hero .subtitle{color:#687b5d!important}.date{color:#596d50!important}.venue-line{color:#8b6b61!important}
+.ornament,.divider{color:#d28da0!important}
+.paper,.event-card,.detail-card,#story .story{color:#50614c!important;background:linear-gradient(135deg,rgba(255,252,244,.77),rgba(245,250,238,.57) 54%,rgba(255,231,235,.52))!important;border:1px solid rgba(167,122,75,.34)!important;box-shadow:0 18px 55px rgba(75,92,62,.13),inset 0 1px 0 rgba(255,255,255,.85)!important;backdrop-filter:blur(8px) saturate(125%);-webkit-backdrop-filter:blur(8px) saturate(125%)}
+.paper h2,.paper h3,.event-card h3,.detail-card h3,.section-head h2{color:#687e5c!important}.event-card p,.detail-card p,.story p{color:#64735d!important}.story:before{color:#d18aa0!important}.signature{color:#b47789!important}
+.count-unit{border-color:rgba(167,122,75,.36)!important;background:rgba(255,255,250,.54)!important;box-shadow:inset 0 0 18px rgba(255,255,255,.42)!important}.count-value,.guest-counter output{background:linear-gradient(110deg,#a77a4b,#d8a3ad 55%,#8ca27b)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}.count-label,.count-caption{color:#7a896e!important}
+.guest-counter{border-color:rgba(167,122,75,.42)!important;background:rgba(255,250,240,.68)!important;color:#667b5d!important}.guest-counter button{border-color:rgba(167,122,75,.38)!important;background:rgba(255,255,255,.62)!important;color:#a77a4b!important}
+.rsvp-deadline{border-color:rgba(167,122,75,.38)!important;background:rgba(255,252,245,.72)!important;color:#667b5d!important}.rsvp-deadline strong{background:linear-gradient(110deg,#a77a4b,#d18da0)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+input,textarea,select{background:rgba(255,255,250,.82)!important;color:#4e604d!important;border-color:rgba(167,122,75,.35)!important}label{color:#77866e!important}.cta,.map-button,.submit{border-color:#c995a4!important;color:#8b5d6a!important;background:rgba(255,255,255,.4)!important}.cta:hover,.map-button:hover,.submit:hover{background:#d99eaf!important;color:#fffaf0!important}
+footer{color:#66765e!important}footer strong{color:#b47d8c!important}.tiny{color:#87947e!important}.music{background:rgba(255,250,240,.9)!important;color:#687b5d!important;border-color:rgba(167,122,75,.38)!important}
+#invitationGate{background:radial-gradient(ellipse at 50% 34%,rgba(255,255,249,.48),rgba(227,237,217,.54) 46%,rgba(205,221,195,.67) 100%)!important;backdrop-filter:blur(13px) saturate(118%)!important;-webkit-backdrop-filter:blur(13px) saturate(118%)!important;color:#9d6e4b!important}
+#invitationGate:before{border-color:rgba(167,122,75,.44)!important;outline-color:rgba(209,138,160,.28)!important}
+#invitationGate:after{border-color:rgba(209,138,160,.2)!important;box-shadow:0 0 0 28px rgba(209,138,160,.055),0 0 0 58px rgba(116,151,98,.045)!important}
+#invitationGate .gate-frame{background:linear-gradient(155deg,rgba(255,253,246,.83),rgba(248,246,234,.69))!important;border-color:rgba(167,122,75,.47)!important;box-shadow:inset 0 0 35px rgba(255,255,255,.58),0 25px 90px rgba(77,97,63,.16)!important;backdrop-filter:blur(7px)!important;-webkit-backdrop-filter:blur(7px)!important}
+.gate-kicker,.gate-date,.gate-action{color:#9e744b!important}.gate-names{color:#9c7650!important}.gate-amp{color:#c9849a!important}.gate-message,.gate-footnote{color:#77866e!important}.gate-rule i{background:#d4a3aa!important}.gate-logo{filter:sepia(.16) saturate(.82)}.gate-stars{color:rgba(181,128,145,.66)!important}
+.gate-action{border-color:rgba(167,122,75,.46)!important;background:rgba(255,255,255,.32)!important}.gate-action:hover{background:rgba(209,138,160,.16)!important}
+.garden-butterflies{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:8}
+.butterfly{position:absolute;display:block;font-size:clamp(17px,2.5vw,29px);filter:drop-shadow(0 2px 5px rgba(111,120,80,.18));opacity:.84;animation:butterfly-drift 18s ease-in-out infinite alternate;will-change:transform}
+.b1{left:7%;top:25%;animation-duration:17s}.b2{left:83%;top:18%;font-size:22px;animation-duration:22s;animation-delay:-5s}.b3{left:72%;top:62%;font-size:18px;animation-duration:19s;animation-delay:-9s}.b4{left:18%;top:76%;font-size:24px;animation-duration:24s;animation-delay:-13s}.b5{left:91%;top:46%;font-size:16px;animation-duration:20s;animation-delay:-7s}
+@keyframes butterfly-drift{0%{transform:translate(0,0) rotate(-12deg) scale(.88)}25%{transform:translate(22px,-28px) rotate(12deg) scale(1)}50%{transform:translate(-8px,-55px) rotate(-7deg) scale(.92)}75%{transform:translate(-30px,-18px) rotate(14deg) scale(1.05)}100%{transform:translate(12px,12px) rotate(-8deg) scale(.9)}}
+.garden-blooms{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}.garden-blooms span{position:absolute;font-size:clamp(28px,5vw,62px);opacity:.17;color:#b9788e;text-shadow:0 2px 8px rgba(255,255,255,.8)}.garden-blooms span:nth-child(1){top:7%;left:-9px}.garden-blooms span:nth-child(2){top:24%;right:-8px;color:#8ba17c}.garden-blooms span:nth-child(3){bottom:18%;left:-11px;color:#d29aaa}.garden-blooms span:nth-child(4){bottom:6%;right:-8px;color:#8ba17c}.garden-blooms span:nth-child(5){top:55%;left:3%;font-size:26px}.garden-blooms span:nth-child(6){top:38%;right:4%;font-size:25px}
+main,footer,nav{position:relative;z-index:3}.garden-butterflies{z-index:9}#invitationGate{z-index:100000}
+@media(max-width:700px){.b1{left:4%;top:20%}.b2{left:82%;top:13%}.b3{left:78%;top:70%}.b4{left:8%;top:78%}.garden-blooms span{opacity:.12}}
+@media(prefers-reduced-motion:reduce){.butterfly{animation:none}}
+
+
+/* Enchanted English Garden: soft, luminous, readable botanical palette */
+:root{--night:#e7eee2;--night2:#c9dbc9;--gold:#b28b68;--cream:#3d5548;--rose:#d8aeb5;--muted:#6d8274}
+html{background:#e7eee2}
+body{background:radial-gradient(ellipse at 15% 12%,rgba(255,249,241,.98),transparent 38%),radial-gradient(ellipse at 88% 32%,rgba(246,224,226,.72),transparent 34%),linear-gradient(180deg,#f8f5ec 0%,#e5eee2 44%,#f4e9e5 100%) !important;color:#405849 !important}
+nav{background:linear-gradient(rgba(248,245,236,.96),rgba(248,245,236,.76),transparent)!important;color:#536b58!important;text-shadow:none!important}
+nav a{color:#526b59!important;text-shadow:none!important}
+.hero,.hero *{text-shadow:none}
+.hero h1,.hero h2,.hero .couple-full-names,.section-head h2{color:#49634f!important}
+.hero p,.hero .eyebrow,.section-head p,.section-head .eyebrow{color:#6f8070!important}
+section,.section-inner,main{color:#4b6151}
+.section-head h2,h2,h3{color:#4e6854}
+p,.story p,.event-card p,.detail-card p,footer{color:#5e7161}
+.eyebrow,.date,.small-label,.section-head .eyebrow{color:#a27c72!important}
+.paper,.event-card,.detail-card,#story .story,.gate-frame{background:rgba(255,253,247,.76)!important;border:1px solid rgba(176,143,116,.34)!important;box-shadow:0 18px 48px rgba(76,103,79,.09),inset 0 1px 0 rgba(255,255,255,.88)!important;color:#4c6252!important;backdrop-filter:blur(5px) saturate(115%)!important;-webkit-backdrop-filter:blur(5px) saturate(115%)!important}
+.event-card h3,.detail-card h3,.story h2,.story h3{color:#536e58!important}
+.divider{background:linear-gradient(90deg,transparent,#c8a9a0,transparent)!important}
+footer{color:#718171!important}
+footer strong{color:#a27c72!important}
+.gate-kicker,.gate-message,.gate-footnote{color:#7b8171!important}
+.gate-names,.gate-name-line{color:#536c56!important}
+.gate-date{color:#aa8871!important}
+.gate-action{color:#6e846d!important;border-color:rgba(160,180,151,.7)!important}
+#invitationGate{background:rgba(221,233,218,.60)!important;backdrop-filter:blur(22px) saturate(120%)!important;-webkit-backdrop-filter:blur(22px) saturate(120%)!important}
+.gate-frame{background:rgba(255,253,247,.84)!important}
+.garden-butterflies .butterfly{font-family:system-ui,sans-serif;opacity:.82;filter:saturate(.62) sepia(.12) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation-timing-function:ease-in-out;will-change:transform;transform-origin:50% 50%}
+.garden-butterflies{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9}
+.garden-butterflies .b1{left:7%;top:24%;font-size:23px;animation:fly-one 21s infinite}
+.garden-butterflies .b2{left:80%;top:18%;font-size:19px;filter:hue-rotate(35deg) saturate(.55) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-two 26s infinite -8s}
+.garden-butterflies .b3{left:68%;top:61%;font-size:17px;filter:hue-rotate(285deg) saturate(.48) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-three 23s infinite -11s}
+.garden-butterflies .b4{left:18%;top:74%;font-size:21px;filter:hue-rotate(320deg) saturate(.52) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-four 28s infinite -15s}
+.garden-butterflies .b5{left:91%;top:45%;font-size:16px;filter:hue-rotate(25deg) saturate(.48) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-five 24s infinite -5s}
+@keyframes fly-one{0%,100%{transform:translate(0,0) rotate(-12deg) scale(.85)}12%{transform:translate(55px,-32px) rotate(18deg) scale(1)}27%{transform:translate(110px,12px) rotate(-18deg) scale(.92)}43%{transform:translate(72px,70px) rotate(14deg) scale(.82)}61%{transform:translate(155px,35px) rotate(-8deg) scale(.96)}79%{transform:translate(92px,-24px) rotate(20deg) scale(.88)}}
+@keyframes fly-two{0%,100%{transform:translate(0,0) rotate(12deg) scale(.9)}18%{transform:translate(-70px,42px) rotate(-22deg) scale(1)}36%{transform:translate(-115px,95px) rotate(15deg) scale(.82)}55%{transform:translate(-35px,145px) rotate(-12deg) scale(.94)}76%{transform:translate(-100px,62px) rotate(20deg) scale(.86)}}
+@keyframes fly-three{0%,100%{transform:translate(0,0) rotate(-6deg) scale(.9)}20%{transform:translate(-65px,-50px) rotate(18deg) scale(1)}40%{transform:translate(-130px,-10px) rotate(-20deg) scale(.82)}62%{transform:translate(-80px,-105px) rotate(12deg) scale(.96)}82%{transform:translate(10px,-55px) rotate(-15deg) scale(.88)}}
+@keyframes fly-four{0%,100%{transform:translate(0,0) rotate(8deg) scale(.86)}16%{transform:translate(60px,-70px) rotate(-20deg) scale(1)}35%{transform:translate(130px,-40px) rotate(16deg) scale(.9)}54%{transform:translate(95px,-130px) rotate(-12deg) scale(.82)}73%{transform:translate(165px,-82px) rotate(22deg) scale(.98)}}
+@keyframes fly-five{0%,100%{transform:translate(0,0) rotate(-10deg) scale(.88)}22%{transform:translate(-65px,55px) rotate(18deg) scale(1)}45%{transform:translate(-120px,20px) rotate(-17deg) scale(.84)}68%{transform:translate(-40px,-50px) rotate(14deg) scale(.96)}85%{transform:translate(-90px,5px) rotate(-8deg) scale(.9)}}
+.garden-blooms span{opacity:.22!important;text-shadow:0 2px 8px rgba(255,255,255,.65)!important}
+.stars .star{opacity:.22!important;background:#b8b99c!important;box-shadow:0 0 4px rgba(180,171,133,.3)!important}
+@media(max-width:700px){.garden-butterflies .b1{left:4%;top:20%}.garden-butterflies .b2{left:82%;top:13%}.garden-butterflies .b3{left:78%;top:70%}.garden-butterflies .b4{left:8%;top:78%}}
+@media(prefers-reduced-motion:reduce){.garden-butterflies .butterfly{animation:none!important}}
+</style>
+<style id="enchanted-garden-waterfall-fireflies">
+/* A quiet garden landscape: cascading water, roses, and softly glowing fireflies. */
+.garden-butterflies{display:none!important}
+.garden-waterfall{position:fixed;right:-2.5vw;bottom:-2vh;width:clamp(260px,35vw,560px);height:78vh;z-index:1;pointer-events:none;opacity:.46;overflow:hidden;border-radius:48% 0 0 0;filter:saturate(.82)}
+.garden-waterfall:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 83% 12%,rgba(255,248,235,.92),transparent 15%),radial-gradient(ellipse at 68% 22%,rgba(101,145,119,.62),transparent 34%),radial-gradient(ellipse at 95% 48%,rgba(69,112,81,.72),transparent 37%),radial-gradient(ellipse at 40% 76%,rgba(94,135,104,.65),transparent 34%),linear-gradient(115deg,transparent 12%,rgba(116,166,168,.2) 26%,transparent 40%);}
+.waterfall-stream{position:absolute;top:9%;right:27%;width:30%;height:77%;border-radius:42% 35% 48% 42%;background:linear-gradient(90deg,rgba(142,193,195,.18),rgba(255,255,255,.78) 22%,rgba(167,213,213,.66) 45%,rgba(255,255,255,.62) 61%,rgba(107,164,169,.18));filter:blur(5px);transform:rotate(2deg);box-shadow:0 0 28px rgba(255,255,255,.36);}
+.waterfall-stream:before{content:"";position:absolute;inset:0 24%;background:repeating-linear-gradient(180deg,rgba(255,255,255,.56) 0 18px,rgba(173,218,218,.12) 20px 41px,transparent 44px 58px);opacity:.8;animation:waterfall-flow 3.8s linear infinite;}
+.waterfall-stream:after{content:"";position:absolute;bottom:-3%;left:-55%;width:210%;height:18%;border-radius:50%;background:radial-gradient(ellipse,rgba(218,244,235,.8),rgba(132,183,176,.42) 44%,transparent 72%);filter:blur(5px)}
+.waterfall-rocks{position:absolute;right:11%;bottom:4%;width:77%;height:25%;border-radius:48% 55% 0 0;background:radial-gradient(ellipse at 25% 40%,#788b6b 0 12%,transparent 32%),radial-gradient(ellipse at 68% 34%,#687e61 0 16%,transparent 36%),radial-gradient(ellipse at 51% 70%,#a8b69a 0 15%,transparent 40%);opacity:.72}
+.rose-vine{position:absolute;left:4%;color:#c58b9a;font-family:Georgia,serif;font-size:clamp(24px,3vw,42px);letter-spacing:-.18em;text-shadow:0 2px 10px rgba(255,248,239,.9);white-space:nowrap;opacity:.8}
+.rose-vine-one{top:16%;transform:rotate(-20deg)}.rose-vine-two{top:48%;left:22%;color:#d7a0a6;transform:rotate(16deg)}
+.garden-fireflies{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.garden-fireflies i{position:absolute;display:block;width:5px;height:5px;border-radius:50%;background:#fff4b5;box-shadow:0 0 6px 2px rgba(255,235,156,.65),0 0 18px 5px rgba(219,220,146,.25);opacity:0;animation:firefly-wander 9s ease-in-out infinite}
+.garden-fireflies i:nth-child(1){left:13%;top:29%;animation-delay:-1s}.garden-fireflies i:nth-child(2){left:29%;top:65%;animation-delay:-5s;animation-duration:11s}.garden-fireflies i:nth-child(3){left:73%;top:24%;animation-delay:-3s;animation-duration:12s}.garden-fireflies i:nth-child(4){left:87%;top:53%;animation-delay:-7s}.garden-fireflies i:nth-child(5){left:58%;top:77%;animation-delay:-4s;animation-duration:10s}.garden-fireflies i:nth-child(6){left:41%;top:18%;animation-delay:-6s}.garden-fireflies i:nth-child(7){left:8%;top:79%;animation-delay:-2s;animation-duration:13s}.garden-fireflies i:nth-child(8){left:93%;top:34%;animation-delay:-8s}.garden-fireflies i:nth-child(9){left:48%;top:42%;animation-delay:-3.5s;animation-duration:11s}.garden-fireflies i:nth-child(10){left:21%;top:48%;animation-delay:-6.5s}.garden-fireflies i:nth-child(11){left:65%;top:59%;animation-delay:-1.5s;animation-duration:12s}.garden-fireflies i:nth-child(12){left:79%;top:82%;animation-delay:-5.5s}
+@keyframes firefly-wander{0%,100%{opacity:0;transform:translate(0,0) scale(.55)}15%,35%{opacity:.85}25%{transform:translate(14px,-18px) scale(1.2)}52%{opacity:.3;transform:translate(-16px,-35px) scale(.7)}70%{opacity:.8;transform:translate(22px,-22px) scale(1)}86%{opacity:.15;transform:translate(-7px,8px) scale(.6)}}
+@keyframes waterfall-flow{from{transform:translateY(-24px)}to{transform:translateY(24px)}}
+@media(max-width:700px){.garden-waterfall{right:-22vw;width:78vw;height:60vh;opacity:.29}.rose-vine{font-size:24px}.garden-fireflies i{width:4px;height:4px}}
+@media(prefers-reduced-motion:reduce){.garden-fireflies i,.waterfall-stream:before{animation:none!important;opacity:.35}}
+</style>
+<style id="enchanted-garden-visible-fireflies-luxe-palette">
+/* Stronger, clearly visible fireflies and a more visible cascading garden waterfall. */
+.garden-waterfall{right:-1vw!important;width:clamp(320px,42vw,680px)!important;height:86vh!important;opacity:.78!important;filter:saturate(1.08) contrast(1.06)!important;z-index:0!important}
+.garden-waterfall:before{background:radial-gradient(ellipse at 83% 12%,rgba(255,250,231,.98),transparent 18%),radial-gradient(ellipse at 68% 22%,rgba(113,159,124,.78),transparent 36%),radial-gradient(ellipse at 95% 48%,rgba(50,91,67,.78),transparent 39%),radial-gradient(ellipse at 40% 76%,rgba(103,151,117,.75),transparent 36%),linear-gradient(115deg,transparent 8%,rgba(145,207,210,.36) 27%,rgba(255,255,255,.12) 35%,transparent 48%)!important}
+.waterfall-stream{width:37%!important;right:26%!important;filter:blur(3px)!important;box-shadow:0 0 42px rgba(219,250,246,.7)!important;background:linear-gradient(90deg,rgba(142,193,195,.32),rgba(255,255,255,.95) 20%,rgba(167,224,225,.84) 45%,rgba(255,255,255,.9) 61%,rgba(107,164,169,.28))!important}
+.waterfall-stream:before{opacity:1!important;background:repeating-linear-gradient(180deg,rgba(255,255,255,.8) 0 16px,rgba(173,218,218,.22) 19px 36px,transparent 39px 53px)!important}
+.garden-fireflies{z-index:8!important}
+.garden-fireflies i{width:10px!important;height:10px!important;background:#fff8c7!important;opacity:0;box-shadow:0 0 8px 4px rgba(255,236,145,.95),0 0 22px 9px rgba(255,211,104,.68),0 0 42px 13px rgba(255,239,174,.35)!important;animation:firefly-wander 6.5s ease-in-out infinite!important}
+.garden-fireflies i:nth-child(3n){width:13px!important;height:13px!important;box-shadow:0 0 10px 5px rgba(255,241,171,1),0 0 28px 12px rgba(255,205,111,.78),0 0 50px 16px rgba(255,241,190,.42)!important}
+.garden-fireflies i:nth-child(2n){animation-duration:8s!important}
+.garden-fireflies i:nth-child(4n){animation-duration:5.8s!important}
+/* Rose-gold, warm antique gold, copper and muted sage typography. */
+:root{--garden-gold:#b88b45;--garden-rose-gold:#b97870;--garden-copper:#a86645;--garden-sage:#617b61}
+h1,h2,h3,h4,h5,h6{color:var(--garden-copper)!important;text-shadow:0 1px 0 rgba(255,250,235,.5)}
+.couple-names,.couple-name,.names,.name,.hero-title,.invitation-title,.monogram,.section-title,.eyebrow,.kicker,.date,.wedding-date,.venue-title{color:var(--garden-gold)!important}
+p,li,label,.subtitle,.description,.body-copy,.note-text,.venue-details,.countdown-label,.guest-label{color:#657761!important}
+a:not(.button):not(button),.text-link{color:var(--garden-copper)!important}
+button,.button,.cta,.primary-button{border-color:rgba(184,139,69,.8)!important}
+@media(max-width:700px){.garden-waterfall{right:-20vw!important;width:90vw!important;height:67vh!important;opacity:.64!important}.garden-fireflies i{width:9px!important;height:9px!important}.garden-fireflies i:nth-child(3n){width:11px!important;height:11px!important}}
+@media(prefers-reduced-motion:reduce){.garden-fireflies i{animation:none!important;opacity:.75!important}}
+</style>
+<style id="enhanced-visible-gold-details">
+/* Boost gold accents so itinerary, timings and the couple's logo stand out clearly. */
+:root{--garden-gold-bright:#8b5b12;--garden-gold-rich:#a56f18;--garden-gold-glow:#d7a94e;--garden-gold-ink:#74470c}
+/* Section and itinerary headings */
+[class*="itinerary" i], [id*="itinerary" i],
+[class*="schedule" i], [id*="schedule" i],
+[class*="timeline" i], [id*="timeline" i],
+[class*="section-title" i], [class*="eyebrow" i], [class*="kicker" i]{
+  color:var(--garden-gold-bright)!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.8),0 0 1px rgba(116,71,12,.28)!important;
+}
+/* Event timings, date labels and time chips */
+[class*="time" i], [id*="time" i], [class*="hour" i], [class*="date" i],
+[class*="timing" i], [class*="event-date" i]{
+  color:var(--garden-gold-ink)!important;
+  font-weight:700!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.75)!important;
+}
+/* Logo and monogram: stronger gold, contrast and subtle metallic edge */
+.logo, [class*="logo" i], [id*="logo" i], .monogram, [class*="monogram" i],
+[class*="initial" i], [class*="crest" i]{
+  color:var(--garden-gold-bright)!important;
+  -webkit-text-stroke:.25px rgba(116,71,12,.45);
+  text-shadow:0 1px 0 #fff9e8,0 2px 0 rgba(139,91,18,.22),0 0 10px rgba(215,169,78,.22)!important;
+}
+.logo svg, [class*="logo" i] svg, [class*="monogram" i] svg,
+.logo svg *, [class*="logo" i] svg *, [class*="monogram" i] svg *{
+  stroke:#986719!important;
+  fill:currentColor;
+  filter:drop-shadow(0 1px 1px rgba(116,71,12,.22));
+}
+/* Existing gold text elements get a deeper, more readable shade */
+[style*="#b88b45" i], [style*="#d4af37" i], [style*="gold" i]{
+  text-shadow:0 1px 0 rgba(255,255,255,.72)!important;
+}
+</style>
+<style id="readability-contrast-fix">
+/* High-contrast text pass: remove metallic gradient clipping from important text. */
+:root{--garden-gold-bright:#80500a;--garden-gold-rich:#8b570d;--garden-gold-ink:#684006;--garden-gold-glow:#d7a94e}
+.itinerary,.itinerary *,.itinerary [class*="title" i],.itinerary [class*="time" i],
+[class*="itinerary" i] h1,[class*="itinerary" i] h2,[class*="itinerary" i] h3,
+[class*="itinerary" i] strong,[class*="itinerary" i] span,[class*="itinerary" i] p{
+  -webkit-text-fill-color:#684006!important;color:#684006!important;
+  text-shadow:none!important;opacity:1!important;
+}
+/* Countdown numbers and labels remain solid dark ink, never transparent gradient text. */
+#countdown-section,#countdown-section *{opacity:1!important;text-shadow:none!important}
+#countdown-section .count-value,#countdown .count-value,#countdown .count-unit,
+#countdown-section .count-label,#countdown-section .count-caption,
+#countdown-section .countdown-date,#countdown-section h1,#countdown-section h2,
+#countdown-section h3,#countdown-section p,#countdown-section span,
+#countdown-section strong,#countdown-section div{
+  -webkit-text-fill-color:#354b37!important;color:#354b37!important;
+}
+#countdown-section .count-value,#countdown .count-value{
+  background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;
+  color:#80500a!important;-webkit-text-fill-color:#80500a!important;font-weight:800!important;
+}
+#countdown-section .count-unit,#countdown .count-unit{
+  background:rgba(255,253,246,.96)!important;border:1px solid #b58a42!important;
+  box-shadow:0 3px 12px rgba(65,73,46,.13)!important;border-radius:12px!important;
+}
+#countdown-section .count-label,#countdown-section .count-caption{color:#354b37!important;-webkit-text-fill-color:#354b37!important;font-weight:700!important}
+#countdown-section .countdown-date{color:#684006!important;-webkit-text-fill-color:#684006!important;font-weight:800!important}
+/* Remove gradient-filled text globally from prominent labels and logo. */
+.couple-names,.couple-name,.names,.name,.hero-title,.invitation-title,.monogram,
+.section-title,.eyebrow,.kicker,.date,.wedding-date,.venue-title,
+.logo,[class*="logo" i],[class*="monogram" i]{
+  background:none!important;background-image:none!important;background-clip:border-box!important;
+  -webkit-background-clip:border-box!important;color:#80500a!important;-webkit-text-fill-color:#80500a!important;
+  text-shadow:none!important;opacity:1!important;
+}
+</style>
+<style id="nav-logo-spacing-fix">
+/* Bring the AA monogram closer to the navigation without shifting the rest of the page. */
+.hero .gold-logo{margin-top:-18px!important;margin-bottom:18px!important}
+@media(max-width:700px){.hero .gold-logo{margin-top:-12px!important;margin-bottom:14px!important}}
+</style>
 </head>
 <body>
 <div id="invitationGate" role="button" tabindex="0" aria-label="Open wedding invitation and play music">
@@ -340,247 +573,27 @@ body:before{background:radial-gradient(ellipse at 50% 10%,rgba(61,43,20,.15),tra
 })();
 </script>
 
-<style id="frosted-glass-invitation-cards">
-/* Translucent frosted-glass finish for invitation cards */
-.paper, .event-card, .detail-card, #story .story {
-  background: linear-gradient(135deg, rgba(220, 230, 255, .065), rgba(190, 205, 238, .018) 55%, rgba(255, 220, 160, .03)) !important;
-  -webkit-backdrop-filter: blur(7px) saturate(130%);
-  backdrop-filter: blur(7px) saturate(130%);
-  border: 1px solid rgba(231, 196, 119, .36) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), inset 0 0 28px rgba(220,166,75,.025), 0 18px 55px rgba(0,0,0,.18) !important;
-}
-.event-card, .detail-card { border-radius: 16px; }
-#story .story { border-radius: 18px; }
-@supports not ((backdrop-filter: blur(1px))) {
-  .paper, .event-card, .detail-card, #story .story { background: rgba(15, 24, 49, .78) !important; }
-}
-</style>
 
 
-<style id="more-transparent-overlay-card">
-#invitationGate {
-  /* Draw a subtle star field on the overlay itself, so it remains visible through the glass card. */
-  background:
-    radial-gradient(circle at 12% 18%, rgba(255,224,160,.95) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 82% 14%, rgba(255,224,160,.82) 0 1px, transparent 1.9px),
-    radial-gradient(circle at 24% 32%, rgba(255,240,205,.8) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 91% 39%, rgba(255,224,160,.9) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 8% 57%, rgba(255,224,160,.8) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 76% 68%, rgba(255,240,205,.75) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 18% 82%, rgba(255,224,160,.85) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 88% 86%, rgba(255,224,160,.8) 0 1px, transparent 1.8px),
-    radial-gradient(ellipse at 50% 38%, rgba(21,31,59,.48) 0%, rgba(5,9,24,.60) 52%, rgba(2,4,12,.72) 100%) !important;
-}
-#invitationGate .gate-frame {
-  background: linear-gradient(155deg, rgba(24, 37, 72, .23), rgba(5, 10, 28, .19)) !important;
-  -webkit-backdrop-filter: blur(5px) saturate(125%);
-  backdrop-filter: blur(5px) saturate(125%);
-  border-color: rgba(224, 183, 105, .52);
-  box-shadow: inset 0 0 40px rgba(220,166,75,.035), 0 25px 90px rgba(0,0,0,.28);
-}
-@supports not ((backdrop-filter: blur(1px))) {
-  #invitationGate .gate-frame { background: rgba(8, 15, 36, .32) !important; }
-}
-</style>
 
 
-<style id="enchanted-english-garden-theme">
-:root{--night:#edf2e7;--night2:#dce8d4;--gold:#a77a4b;--cream:#fffaf0;--rose:#d98fa2;--muted:#65775f}
-html{scroll-behavior:smooth}
-body{color:#4e604d;background:linear-gradient(180deg,#f8f4e9 0%,#e7efdf 43%,#f7e9e5 100%);font-family:'Cormorant Garamond',Georgia,serif}
-body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.26;background:radial-gradient(ellipse at 4% 18%,rgba(106,143,91,.24),transparent 29%),radial-gradient(ellipse at 96% 24%,rgba(212,143,163,.2),transparent 26%),radial-gradient(ellipse at 12% 88%,rgba(212,143,163,.17),transparent 28%),radial-gradient(ellipse at 91% 82%,rgba(116,151,98,.2),transparent 27%)}
-.stars,.shooting-stars{display:none!important}
-nav{background:linear-gradient(rgba(248,244,233,.94),rgba(248,244,233,.64),transparent);backdrop-filter:blur(9px);color:#586b50;border-bottom:1px solid rgba(167,122,75,.18)}
-nav a:hover{color:#bd7189}
-.hero{background:radial-gradient(ellipse at 50% 40%,rgba(255,255,255,.58),transparent 58%)}
-.hero:before{background:radial-gradient(ellipse at 50% 50%,rgba(255,250,240,.52),transparent 72%)!important}
-.eyebrow{color:#a77a4b!important}.hero h1,.amp{color:#a77a4b!important}.hero .subtitle{color:#687b5d!important}.date{color:#596d50!important}.venue-line{color:#8b6b61!important}
-.ornament,.divider{color:#d28da0!important}
-.paper,.event-card,.detail-card,#story .story{color:#50614c!important;background:linear-gradient(135deg,rgba(255,252,244,.77),rgba(245,250,238,.57) 54%,rgba(255,231,235,.52))!important;border:1px solid rgba(167,122,75,.34)!important;box-shadow:0 18px 55px rgba(75,92,62,.13),inset 0 1px 0 rgba(255,255,255,.85)!important;backdrop-filter:blur(8px) saturate(125%);-webkit-backdrop-filter:blur(8px) saturate(125%)}
-.paper h2,.paper h3,.event-card h3,.detail-card h3,.section-head h2{color:#687e5c!important}.event-card p,.detail-card p,.story p{color:#64735d!important}.story:before{color:#d18aa0!important}.signature{color:#b47789!important}
-.count-unit{border-color:rgba(167,122,75,.36)!important;background:rgba(255,255,250,.54)!important;box-shadow:inset 0 0 18px rgba(255,255,255,.42)!important}.count-value,.guest-counter output{background:linear-gradient(110deg,#a77a4b,#d8a3ad 55%,#8ca27b)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}.count-label,.count-caption{color:#7a896e!important}
-.guest-counter{border-color:rgba(167,122,75,.42)!important;background:rgba(255,250,240,.68)!important;color:#667b5d!important}.guest-counter button{border-color:rgba(167,122,75,.38)!important;background:rgba(255,255,255,.62)!important;color:#a77a4b!important}
-.rsvp-deadline{border-color:rgba(167,122,75,.38)!important;background:rgba(255,252,245,.72)!important;color:#667b5d!important}.rsvp-deadline strong{background:linear-gradient(110deg,#a77a4b,#d18da0)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
-input,textarea,select{background:rgba(255,255,250,.82)!important;color:#4e604d!important;border-color:rgba(167,122,75,.35)!important}label{color:#77866e!important}.cta,.map-button,.submit{border-color:#c995a4!important;color:#8b5d6a!important;background:rgba(255,255,255,.4)!important}.cta:hover,.map-button:hover,.submit:hover{background:#d99eaf!important;color:#fffaf0!important}
-footer{color:#66765e!important}footer strong{color:#b47d8c!important}.tiny{color:#87947e!important}.music{background:rgba(255,250,240,.9)!important;color:#687b5d!important;border-color:rgba(167,122,75,.38)!important}
-#invitationGate{background:radial-gradient(ellipse at 50% 34%,rgba(255,255,249,.48),rgba(227,237,217,.54) 46%,rgba(205,221,195,.67) 100%)!important;backdrop-filter:blur(13px) saturate(118%)!important;-webkit-backdrop-filter:blur(13px) saturate(118%)!important;color:#9d6e4b!important}
-#invitationGate:before{border-color:rgba(167,122,75,.44)!important;outline-color:rgba(209,138,160,.28)!important}
-#invitationGate:after{border-color:rgba(209,138,160,.2)!important;box-shadow:0 0 0 28px rgba(209,138,160,.055),0 0 0 58px rgba(116,151,98,.045)!important}
-#invitationGate .gate-frame{background:linear-gradient(155deg,rgba(255,253,246,.83),rgba(248,246,234,.69))!important;border-color:rgba(167,122,75,.47)!important;box-shadow:inset 0 0 35px rgba(255,255,255,.58),0 25px 90px rgba(77,97,63,.16)!important;backdrop-filter:blur(7px)!important;-webkit-backdrop-filter:blur(7px)!important}
-.gate-kicker,.gate-date,.gate-action{color:#9e744b!important}.gate-names{color:#9c7650!important}.gate-amp{color:#c9849a!important}.gate-message,.gate-footnote{color:#77866e!important}.gate-rule i{background:#d4a3aa!important}.gate-logo{filter:sepia(.16) saturate(.82)}.gate-stars{color:rgba(181,128,145,.66)!important}
-.gate-action{border-color:rgba(167,122,75,.46)!important;background:rgba(255,255,255,.32)!important}.gate-action:hover{background:rgba(209,138,160,.16)!important}
-.garden-butterflies{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:8}
-.butterfly{position:absolute;display:block;font-size:clamp(17px,2.5vw,29px);filter:drop-shadow(0 2px 5px rgba(111,120,80,.18));opacity:.84;animation:butterfly-drift 18s ease-in-out infinite alternate;will-change:transform}
-.b1{left:7%;top:25%;animation-duration:17s}.b2{left:83%;top:18%;font-size:22px;animation-duration:22s;animation-delay:-5s}.b3{left:72%;top:62%;font-size:18px;animation-duration:19s;animation-delay:-9s}.b4{left:18%;top:76%;font-size:24px;animation-duration:24s;animation-delay:-13s}.b5{left:91%;top:46%;font-size:16px;animation-duration:20s;animation-delay:-7s}
-@keyframes butterfly-drift{0%{transform:translate(0,0) rotate(-12deg) scale(.88)}25%{transform:translate(22px,-28px) rotate(12deg) scale(1)}50%{transform:translate(-8px,-55px) rotate(-7deg) scale(.92)}75%{transform:translate(-30px,-18px) rotate(14deg) scale(1.05)}100%{transform:translate(12px,12px) rotate(-8deg) scale(.9)}}
-.garden-blooms{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}.garden-blooms span{position:absolute;font-size:clamp(28px,5vw,62px);opacity:.17;color:#b9788e;text-shadow:0 2px 8px rgba(255,255,255,.8)}.garden-blooms span:nth-child(1){top:7%;left:-9px}.garden-blooms span:nth-child(2){top:24%;right:-8px;color:#8ba17c}.garden-blooms span:nth-child(3){bottom:18%;left:-11px;color:#d29aaa}.garden-blooms span:nth-child(4){bottom:6%;right:-8px;color:#8ba17c}.garden-blooms span:nth-child(5){top:55%;left:3%;font-size:26px}.garden-blooms span:nth-child(6){top:38%;right:4%;font-size:25px}
-main,footer,nav{position:relative;z-index:3}.garden-butterflies{z-index:9}#invitationGate{z-index:100000}
-@media(max-width:700px){.b1{left:4%;top:20%}.b2{left:82%;top:13%}.b3{left:78%;top:70%}.b4{left:8%;top:78%}.garden-blooms span{opacity:.12}}
-@media(prefers-reduced-motion:reduce){.butterfly{animation:none}}
 
 
-/* Enchanted English Garden: soft, luminous, readable botanical palette */
-:root{--night:#e7eee2;--night2:#c9dbc9;--gold:#b28b68;--cream:#3d5548;--rose:#d8aeb5;--muted:#6d8274}
-html{background:#e7eee2}
-body{background:radial-gradient(ellipse at 15% 12%,rgba(255,249,241,.98),transparent 38%),radial-gradient(ellipse at 88% 32%,rgba(246,224,226,.72),transparent 34%),linear-gradient(180deg,#f8f5ec 0%,#e5eee2 44%,#f4e9e5 100%) !important;color:#405849 !important}
-nav{background:linear-gradient(rgba(248,245,236,.96),rgba(248,245,236,.76),transparent)!important;color:#536b58!important;text-shadow:none!important}
-nav a{color:#526b59!important;text-shadow:none!important}
-.hero,.hero *{text-shadow:none}
-.hero h1,.hero h2,.hero .couple-full-names,.section-head h2{color:#49634f!important}
-.hero p,.hero .eyebrow,.section-head p,.section-head .eyebrow{color:#6f8070!important}
-section,.section-inner,main{color:#4b6151}
-.section-head h2,h2,h3{color:#4e6854}
-p,.story p,.event-card p,.detail-card p,footer{color:#5e7161}
-.eyebrow,.date,.small-label,.section-head .eyebrow{color:#a27c72!important}
-.paper,.event-card,.detail-card,#story .story,.gate-frame{background:rgba(255,253,247,.76)!important;border:1px solid rgba(176,143,116,.34)!important;box-shadow:0 18px 48px rgba(76,103,79,.09),inset 0 1px 0 rgba(255,255,255,.88)!important;color:#4c6252!important;backdrop-filter:blur(5px) saturate(115%)!important;-webkit-backdrop-filter:blur(5px) saturate(115%)!important}
-.event-card h3,.detail-card h3,.story h2,.story h3{color:#536e58!important}
-.divider{background:linear-gradient(90deg,transparent,#c8a9a0,transparent)!important}
-footer{color:#718171!important}
-footer strong{color:#a27c72!important}
-.gate-kicker,.gate-message,.gate-footnote{color:#7b8171!important}
-.gate-names,.gate-name-line{color:#536c56!important}
-.gate-date{color:#aa8871!important}
-.gate-action{color:#6e846d!important;border-color:rgba(160,180,151,.7)!important}
-#invitationGate{background:rgba(221,233,218,.60)!important;backdrop-filter:blur(22px) saturate(120%)!important;-webkit-backdrop-filter:blur(22px) saturate(120%)!important}
-.gate-frame{background:rgba(255,253,247,.84)!important}
-.garden-butterflies .butterfly{font-family:system-ui,sans-serif;opacity:.82;filter:saturate(.62) sepia(.12) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation-timing-function:ease-in-out;will-change:transform;transform-origin:50% 50%}
-.garden-butterflies{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9}
-.garden-butterflies .b1{left:7%;top:24%;font-size:23px;animation:fly-one 21s infinite}
-.garden-butterflies .b2{left:80%;top:18%;font-size:19px;filter:hue-rotate(35deg) saturate(.55) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-two 26s infinite -8s}
-.garden-butterflies .b3{left:68%;top:61%;font-size:17px;filter:hue-rotate(285deg) saturate(.48) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-three 23s infinite -11s}
-.garden-butterflies .b4{left:18%;top:74%;font-size:21px;filter:hue-rotate(320deg) saturate(.52) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-four 28s infinite -15s}
-.garden-butterflies .b5{left:91%;top:45%;font-size:16px;filter:hue-rotate(25deg) saturate(.48) drop-shadow(0 3px 5px rgba(94,119,92,.15));animation:fly-five 24s infinite -5s}
-@keyframes fly-one{0%,100%{transform:translate(0,0) rotate(-12deg) scale(.85)}12%{transform:translate(55px,-32px) rotate(18deg) scale(1)}27%{transform:translate(110px,12px) rotate(-18deg) scale(.92)}43%{transform:translate(72px,70px) rotate(14deg) scale(.82)}61%{transform:translate(155px,35px) rotate(-8deg) scale(.96)}79%{transform:translate(92px,-24px) rotate(20deg) scale(.88)}}
-@keyframes fly-two{0%,100%{transform:translate(0,0) rotate(12deg) scale(.9)}18%{transform:translate(-70px,42px) rotate(-22deg) scale(1)}36%{transform:translate(-115px,95px) rotate(15deg) scale(.82)}55%{transform:translate(-35px,145px) rotate(-12deg) scale(.94)}76%{transform:translate(-100px,62px) rotate(20deg) scale(.86)}}
-@keyframes fly-three{0%,100%{transform:translate(0,0) rotate(-6deg) scale(.9)}20%{transform:translate(-65px,-50px) rotate(18deg) scale(1)}40%{transform:translate(-130px,-10px) rotate(-20deg) scale(.82)}62%{transform:translate(-80px,-105px) rotate(12deg) scale(.96)}82%{transform:translate(10px,-55px) rotate(-15deg) scale(.88)}}
-@keyframes fly-four{0%,100%{transform:translate(0,0) rotate(8deg) scale(.86)}16%{transform:translate(60px,-70px) rotate(-20deg) scale(1)}35%{transform:translate(130px,-40px) rotate(16deg) scale(.9)}54%{transform:translate(95px,-130px) rotate(-12deg) scale(.82)}73%{transform:translate(165px,-82px) rotate(22deg) scale(.98)}}
-@keyframes fly-five{0%,100%{transform:translate(0,0) rotate(-10deg) scale(.88)}22%{transform:translate(-65px,55px) rotate(18deg) scale(1)}45%{transform:translate(-120px,20px) rotate(-17deg) scale(.84)}68%{transform:translate(-40px,-50px) rotate(14deg) scale(.96)}85%{transform:translate(-90px,5px) rotate(-8deg) scale(.9)}}
-.garden-blooms span{opacity:.22!important;text-shadow:0 2px 8px rgba(255,255,255,.65)!important}
-.stars .star{opacity:.22!important;background:#b8b99c!important;box-shadow:0 0 4px rgba(180,171,133,.3)!important}
-@media(max-width:700px){.garden-butterflies .b1{left:4%;top:20%}.garden-butterflies .b2{left:82%;top:13%}.garden-butterflies .b3{left:78%;top:70%}.garden-butterflies .b4{left:8%;top:78%}}
-@media(prefers-reduced-motion:reduce){.garden-butterflies .butterfly{animation:none!important}}
-</style>
 
 
-<style id="enchanted-garden-waterfall-fireflies">
-/* A quiet garden landscape: cascading water, roses, and softly glowing fireflies. */
-.garden-butterflies{display:none!important}
-.garden-waterfall{position:fixed;right:-2.5vw;bottom:-2vh;width:clamp(260px,35vw,560px);height:78vh;z-index:1;pointer-events:none;opacity:.46;overflow:hidden;border-radius:48% 0 0 0;filter:saturate(.82)}
-.garden-waterfall:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 83% 12%,rgba(255,248,235,.92),transparent 15%),radial-gradient(ellipse at 68% 22%,rgba(101,145,119,.62),transparent 34%),radial-gradient(ellipse at 95% 48%,rgba(69,112,81,.72),transparent 37%),radial-gradient(ellipse at 40% 76%,rgba(94,135,104,.65),transparent 34%),linear-gradient(115deg,transparent 12%,rgba(116,166,168,.2) 26%,transparent 40%);}
-.waterfall-stream{position:absolute;top:9%;right:27%;width:30%;height:77%;border-radius:42% 35% 48% 42%;background:linear-gradient(90deg,rgba(142,193,195,.18),rgba(255,255,255,.78) 22%,rgba(167,213,213,.66) 45%,rgba(255,255,255,.62) 61%,rgba(107,164,169,.18));filter:blur(5px);transform:rotate(2deg);box-shadow:0 0 28px rgba(255,255,255,.36);}
-.waterfall-stream:before{content:"";position:absolute;inset:0 24%;background:repeating-linear-gradient(180deg,rgba(255,255,255,.56) 0 18px,rgba(173,218,218,.12) 20px 41px,transparent 44px 58px);opacity:.8;animation:waterfall-flow 3.8s linear infinite;}
-.waterfall-stream:after{content:"";position:absolute;bottom:-3%;left:-55%;width:210%;height:18%;border-radius:50%;background:radial-gradient(ellipse,rgba(218,244,235,.8),rgba(132,183,176,.42) 44%,transparent 72%);filter:blur(5px)}
-.waterfall-rocks{position:absolute;right:11%;bottom:4%;width:77%;height:25%;border-radius:48% 55% 0 0;background:radial-gradient(ellipse at 25% 40%,#788b6b 0 12%,transparent 32%),radial-gradient(ellipse at 68% 34%,#687e61 0 16%,transparent 36%),radial-gradient(ellipse at 51% 70%,#a8b69a 0 15%,transparent 40%);opacity:.72}
-.rose-vine{position:absolute;left:4%;color:#c58b9a;font-family:Georgia,serif;font-size:clamp(24px,3vw,42px);letter-spacing:-.18em;text-shadow:0 2px 10px rgba(255,248,239,.9);white-space:nowrap;opacity:.8}
-.rose-vine-one{top:16%;transform:rotate(-20deg)}.rose-vine-two{top:48%;left:22%;color:#d7a0a6;transform:rotate(16deg)}
-.garden-fireflies{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}
-.garden-fireflies i{position:absolute;display:block;width:5px;height:5px;border-radius:50%;background:#fff4b5;box-shadow:0 0 6px 2px rgba(255,235,156,.65),0 0 18px 5px rgba(219,220,146,.25);opacity:0;animation:firefly-wander 9s ease-in-out infinite}
-.garden-fireflies i:nth-child(1){left:13%;top:29%;animation-delay:-1s}.garden-fireflies i:nth-child(2){left:29%;top:65%;animation-delay:-5s;animation-duration:11s}.garden-fireflies i:nth-child(3){left:73%;top:24%;animation-delay:-3s;animation-duration:12s}.garden-fireflies i:nth-child(4){left:87%;top:53%;animation-delay:-7s}.garden-fireflies i:nth-child(5){left:58%;top:77%;animation-delay:-4s;animation-duration:10s}.garden-fireflies i:nth-child(6){left:41%;top:18%;animation-delay:-6s}.garden-fireflies i:nth-child(7){left:8%;top:79%;animation-delay:-2s;animation-duration:13s}.garden-fireflies i:nth-child(8){left:93%;top:34%;animation-delay:-8s}.garden-fireflies i:nth-child(9){left:48%;top:42%;animation-delay:-3.5s;animation-duration:11s}.garden-fireflies i:nth-child(10){left:21%;top:48%;animation-delay:-6.5s}.garden-fireflies i:nth-child(11){left:65%;top:59%;animation-delay:-1.5s;animation-duration:12s}.garden-fireflies i:nth-child(12){left:79%;top:82%;animation-delay:-5.5s}
-@keyframes firefly-wander{0%,100%{opacity:0;transform:translate(0,0) scale(.55)}15%,35%{opacity:.85}25%{transform:translate(14px,-18px) scale(1.2)}52%{opacity:.3;transform:translate(-16px,-35px) scale(.7)}70%{opacity:.8;transform:translate(22px,-22px) scale(1)}86%{opacity:.15;transform:translate(-7px,8px) scale(.6)}}
-@keyframes waterfall-flow{from{transform:translateY(-24px)}to{transform:translateY(24px)}}
-@media(max-width:700px){.garden-waterfall{right:-22vw;width:78vw;height:60vh;opacity:.29}.rose-vine{font-size:24px}.garden-fireflies i{width:4px;height:4px}}
-@media(prefers-reduced-motion:reduce){.garden-fireflies i,.waterfall-stream:before{animation:none!important;opacity:.35}}
-</style>
 
 
-<style id="enchanted-garden-visible-fireflies-luxe-palette">
-/* Stronger, clearly visible fireflies and a more visible cascading garden waterfall. */
-.garden-waterfall{right:-1vw!important;width:clamp(320px,42vw,680px)!important;height:86vh!important;opacity:.78!important;filter:saturate(1.08) contrast(1.06)!important;z-index:0!important}
-.garden-waterfall:before{background:radial-gradient(ellipse at 83% 12%,rgba(255,250,231,.98),transparent 18%),radial-gradient(ellipse at 68% 22%,rgba(113,159,124,.78),transparent 36%),radial-gradient(ellipse at 95% 48%,rgba(50,91,67,.78),transparent 39%),radial-gradient(ellipse at 40% 76%,rgba(103,151,117,.75),transparent 36%),linear-gradient(115deg,transparent 8%,rgba(145,207,210,.36) 27%,rgba(255,255,255,.12) 35%,transparent 48%)!important}
-.waterfall-stream{width:37%!important;right:26%!important;filter:blur(3px)!important;box-shadow:0 0 42px rgba(219,250,246,.7)!important;background:linear-gradient(90deg,rgba(142,193,195,.32),rgba(255,255,255,.95) 20%,rgba(167,224,225,.84) 45%,rgba(255,255,255,.9) 61%,rgba(107,164,169,.28))!important}
-.waterfall-stream:before{opacity:1!important;background:repeating-linear-gradient(180deg,rgba(255,255,255,.8) 0 16px,rgba(173,218,218,.22) 19px 36px,transparent 39px 53px)!important}
-.garden-fireflies{z-index:8!important}
-.garden-fireflies i{width:10px!important;height:10px!important;background:#fff8c7!important;opacity:0;box-shadow:0 0 8px 4px rgba(255,236,145,.95),0 0 22px 9px rgba(255,211,104,.68),0 0 42px 13px rgba(255,239,174,.35)!important;animation:firefly-wander 6.5s ease-in-out infinite!important}
-.garden-fireflies i:nth-child(3n){width:13px!important;height:13px!important;box-shadow:0 0 10px 5px rgba(255,241,171,1),0 0 28px 12px rgba(255,205,111,.78),0 0 50px 16px rgba(255,241,190,.42)!important}
-.garden-fireflies i:nth-child(2n){animation-duration:8s!important}
-.garden-fireflies i:nth-child(4n){animation-duration:5.8s!important}
-/* Rose-gold, warm antique gold, copper and muted sage typography. */
-:root{--garden-gold:#b88b45;--garden-rose-gold:#b97870;--garden-copper:#a86645;--garden-sage:#617b61}
-h1,h2,h3,h4,h5,h6{color:var(--garden-copper)!important;text-shadow:0 1px 0 rgba(255,250,235,.5)}
-.couple-names,.couple-name,.names,.name,.hero-title,.invitation-title,.monogram,.section-title,.eyebrow,.kicker,.date,.wedding-date,.venue-title{color:var(--garden-gold)!important}
-p,li,label,.subtitle,.description,.body-copy,.note-text,.venue-details,.countdown-label,.guest-label{color:#657761!important}
-a:not(.button):not(button),.text-link{color:var(--garden-copper)!important}
-button,.button,.cta,.primary-button{border-color:rgba(184,139,69,.8)!important}
-@media(max-width:700px){.garden-waterfall{right:-20vw!important;width:90vw!important;height:67vh!important;opacity:.64!important}.garden-fireflies i{width:9px!important;height:9px!important}.garden-fireflies i:nth-child(3n){width:11px!important;height:11px!important}}
-@media(prefers-reduced-motion:reduce){.garden-fireflies i{animation:none!important;opacity:.75!important}}
-</style>
 
 
-<style id="enhanced-visible-gold-details">
-/* Boost gold accents so itinerary, timings and the couple's logo stand out clearly. */
-:root{--garden-gold-bright:#8b5b12;--garden-gold-rich:#a56f18;--garden-gold-glow:#d7a94e;--garden-gold-ink:#74470c}
-/* Section and itinerary headings */
-[class*="itinerary" i], [id*="itinerary" i],
-[class*="schedule" i], [id*="schedule" i],
-[class*="timeline" i], [id*="timeline" i],
-[class*="section-title" i], [class*="eyebrow" i], [class*="kicker" i]{
-  color:var(--garden-gold-bright)!important;
-  text-shadow:0 1px 0 rgba(255,255,255,.8),0 0 1px rgba(116,71,12,.28)!important;
-}
-/* Event timings, date labels and time chips */
-[class*="time" i], [id*="time" i], [class*="hour" i], [class*="date" i],
-[class*="timing" i], [class*="event-date" i]{
-  color:var(--garden-gold-ink)!important;
-  font-weight:700!important;
-  text-shadow:0 1px 0 rgba(255,255,255,.75)!important;
-}
-/* Logo and monogram: stronger gold, contrast and subtle metallic edge */
-.logo, [class*="logo" i], [id*="logo" i], .monogram, [class*="monogram" i],
-[class*="initial" i], [class*="crest" i]{
-  color:var(--garden-gold-bright)!important;
-  -webkit-text-stroke:.25px rgba(116,71,12,.45);
-  text-shadow:0 1px 0 #fff9e8,0 2px 0 rgba(139,91,18,.22),0 0 10px rgba(215,169,78,.22)!important;
-}
-.logo svg, [class*="logo" i] svg, [class*="monogram" i] svg,
-.logo svg *, [class*="logo" i] svg *, [class*="monogram" i] svg *{
-  stroke:#986719!important;
-  fill:currentColor;
-  filter:drop-shadow(0 1px 1px rgba(116,71,12,.22));
-}
-/* Existing gold text elements get a deeper, more readable shade */
-[style*="#b88b45" i], [style*="#d4af37" i], [style*="gold" i]{
-  text-shadow:0 1px 0 rgba(255,255,255,.72)!important;
-}
-</style>
 
 
-<style id="readability-contrast-fix">
-/* High-contrast text pass: remove metallic gradient clipping from important text. */
-:root{--garden-gold-bright:#80500a;--garden-gold-rich:#8b570d;--garden-gold-ink:#684006;--garden-gold-glow:#d7a94e}
-.itinerary,.itinerary *,.itinerary [class*="title" i],.itinerary [class*="time" i],
-[class*="itinerary" i] h1,[class*="itinerary" i] h2,[class*="itinerary" i] h3,
-[class*="itinerary" i] strong,[class*="itinerary" i] span,[class*="itinerary" i] p{
-  -webkit-text-fill-color:#684006!important;color:#684006!important;
-  text-shadow:none!important;opacity:1!important;
-}
-/* Countdown numbers and labels remain solid dark ink, never transparent gradient text. */
-#countdown-section,#countdown-section *{opacity:1!important;text-shadow:none!important}
-#countdown-section .count-value,#countdown .count-value,#countdown .count-unit,
-#countdown-section .count-label,#countdown-section .count-caption,
-#countdown-section .countdown-date,#countdown-section h1,#countdown-section h2,
-#countdown-section h3,#countdown-section p,#countdown-section span,
-#countdown-section strong,#countdown-section div{
-  -webkit-text-fill-color:#354b37!important;color:#354b37!important;
-}
-#countdown-section .count-value,#countdown .count-value{
-  background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;
-  color:#80500a!important;-webkit-text-fill-color:#80500a!important;font-weight:800!important;
-}
-#countdown-section .count-unit,#countdown .count-unit{
-  background:rgba(255,253,246,.96)!important;border:1px solid #b58a42!important;
-  box-shadow:0 3px 12px rgba(65,73,46,.13)!important;border-radius:12px!important;
-}
-#countdown-section .count-label,#countdown-section .count-caption{color:#354b37!important;-webkit-text-fill-color:#354b37!important;font-weight:700!important}
-#countdown-section .countdown-date{color:#684006!important;-webkit-text-fill-color:#684006!important;font-weight:800!important}
-/* Remove gradient-filled text globally from prominent labels and logo. */
-.couple-names,.couple-name,.names,.name,.hero-title,.invitation-title,.monogram,
-.section-title,.eyebrow,.kicker,.date,.wedding-date,.venue-title,
-.logo,[class*="logo" i],[class*="monogram" i]{
-  background:none!important;background-image:none!important;background-clip:border-box!important;
-  -webkit-background-clip:border-box!important;color:#80500a!important;-webkit-text-fill-color:#80500a!important;
-  text-shadow:none!important;opacity:1!important;
-}
-</style>
+
+
+
+
+
+
+
 
 </body>
 </html>
